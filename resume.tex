@@ -1,0 +1,93 @@
+\documentclass[11pt, a4paper, sans]{moderncv}
+
+\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{black}                              % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\usepackage{fontawesome}
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[bottom=2.5cm, top=3cm]{geometry}
+\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{datetime}
+
+\def\date[#1.#2]{\yearabove{\monthname[#1]}{#2}}
+
+\def\dates[#1.#2-#3.#4]{\yearabove{\monthname[#1]}{#2}--\yearabove{\monthname[#3]}{#4}}
+\newcommand{\yearabove}[2]{\parbox[t]{10mm}{\centering{#2\par\vspace{-2mm} \tiny{#1}}}}
+
+% don't use the icons
+\renewcommand*{\addresssymbol}       {}
+\renewcommand*{\mobilephonesymbol}   {}
+\renewcommand*{\fixedphonesymbol}    {}
+\renewcommand*{\faxphonesymbol}      {}
+\renewcommand*{\emailsymbol}         {}
+\renewcommand*{\homepagesymbol}      {}
+\renewcommand*{\linkedinsocialsymbol}{}
+\renewcommand*{\twittersocialsymbol} {}
+
+\newcommand{\n}{\newline{}}
+
+% personal data
+\name{Aapeli}{H}
+\title{Resumé}
+% \address{} % address here
+% \phone[mobile]{} % phone here
+\email{aapzu@iki.fi}              
+\social[github]{aapzu}
+\photo[64pt][0.4pt]{picture.jpg}
+
+\begin{document}
+\makecvtitle
+
+\section{Education}
+\cventry{\date[09.2015]--}{M.Phil in Computer Science}{University of Helsinki}{}{}{Estimated graduation 2022}
+\cventry{\dates[08.2012-05.2015]}{High school graduate}{Töölön yhteiskoulu}{}{}{}
+
+\section{Experience}
+
+\subsection{Streamr project}
+
+\cventry{\dates[09.2018-12.2018]}{Software developer}{Data In Chains Oy}{Helsinki}{Finland}
+{Part-time software development.\n Altogether the hours of 2 months.\n Frontend development.}
+
+\cventry{\dates[08.2017-08.2018]}{Software developer}{Streamr Network AG}{Zug}{Switzerland}
+{Full-time frontend development. \n
+Tasks include:
+	\begin{itemize}
+  		\item Development eg. with JS (ES6), CSS, HTML5, React.js
+  		\item Project and team management
+  		\item Representing the company in conferences and meetups
+	\end{itemize}
+Also lived in Zug for 7 months.
+}
+
+\cventry{\dates[09.2014-07.2017]}{Software developer}{Streamr Oy}{Helsinki}{Finland}
+{Part-time software development.\n Altogether the hours of 14 months.\n Full-stack development, focus on frontend}
+
+\bigbreak
+
+\subsection{Other}
+
+\cventry{2012 -- 2014}{Warehouse worker}{Palvelu Oy Metsäpolku}{Helsinki}{Finland}
+{Summer worker.\n Altogether the hours of 4 months.}
+
+\section{Languages}
+\cvitemwithcomment{}{Finnish}{Native}
+\cvitemwithcomment{}{English}{Full professional proficiency}
+\cvitemwithcomment{}{Swedish}{Limited working proficiency}
+
+\section{Skillset}
+\cvitem{}{e.g. Web-development, JavaScript, Node.js, Java, Groovy, ES6, CSS, HTML, React.js, Redux.js, Express.js, Web3}
+
+% \section{Other}
+% \cventry{2014 -- 2015}{Secretary in the Student’s Union}{Töölön yhteiskoulu}{}{}{}
+% \cventry{2012 -- 2014}{Taking action in the Students’ Union}{Töölön yhteiskoulu}{}{}{}
+
+
+\end{document}

@@ -1,0 +1,5 @@
+.DS_Store
+resume.*
+
+!resume.tex
+!resume.pdf
