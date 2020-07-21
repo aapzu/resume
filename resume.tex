@@ -1,92 +1,140 @@
-\documentclass[11pt, a4paper, sans]{moderncv}
+\input{config}
 
-\moderncvstyle{classic}                            % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
-\moderncvcolor{black}                              % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
-\usepackage{fontawesome}
-% character encoding
-\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
-% adjust the page margins
-\usepackage[bottom=2.5cm, top=3cm]{geometry}
-\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
-
-\usepackage{datetime}
-
-\def\date[#1.#2]{\yearabove{\monthname[#1]}{#2}}
-
-\def\dates[#1.#2-#3.#4]{\yearabove{\monthname[#1]}{#2}--\yearabove{\monthname[#3]}{#4}}
-\newcommand{\yearabove}[2]{\parbox[t]{10mm}{\centering{#2\par\vspace{-2mm} \tiny{#1}}}}
-
-% don't use the icons
-\renewcommand*{\addresssymbol}       {}
-\renewcommand*{\mobilephonesymbol}   {}
-\renewcommand*{\fixedphonesymbol}    {}
-\renewcommand*{\faxphonesymbol}      {}
-\renewcommand*{\emailsymbol}         {}
-\renewcommand*{\homepagesymbol}      {}
-\renewcommand*{\linkedinsocialsymbol}{}
-\renewcommand*{\twittersocialsymbol} {}
-
-\newcommand{\n}{\newline{}}
-
-% personal data
 \name{Aapeli}{H}
-\title{Resumé}
+\title{\eng{Resumé} \fin{Ansioluettelo}}
 % \address{} % address here
 % \phone[mobile]{} % phone here
 \email{aapzu@iki.fi}              
 \social[github]{aapzu}
-\photo[64pt][0.4pt]{picture.jpg}
+\photo[80pt][0.0pt]{picture.jpg}
+
+%\quote
+%	{TypeScript, Node.js, ES6, CSS, HTML, React.js, Redux.js, Express.js, Java, Groovy, Web3}
 
 \begin{document}
+
 \makecvtitle
 
-\section{Education}
-\cventry{\dates[09.2015-12.2019]}{BSc in Computer Science}{University of Helsinki}{}{}{}
-\cventry{\dates[08.2012-05.2015]}{High school graduate}{Töölön yhteiskoulu}{}{}{}
-
-\section{Experience}
-
-\cventry{\date[06.2019]--\hspace*{28pt}}{Gofore Oyj}{Software developer}{Helsinki}{Finland}
-{Full-stack development.}
-
-\cventry{\dates[09.2018-12.2018]}{Data In Chains Oy}{Software developer}{Helsinki}{Finland}
-{Part-time software development. (40 \%)\n Frontend development.}
-
-\cventry{\dates[08.2017-08.2018]}{Streamr Network AG}{Software developer}{Zug}{Switzerland}
-{Full-time frontend development. \n
-Tasks include:
-	\begin{itemize}
-  		\item Development eg. with JS (ES6), CSS, HTML5, React.js
-  		\item Project and team management
-  		\item Representing the company in conferences and meetups
-	\end{itemize}
-Also lived in Zug for 7 months.
+\section{
+	\eng{Experience}
+	\fin{Kokemus}
 }
 
-\cventry{\dates[09.2014-07.2017]}{Streamr Oy}{Software developer}{Helsinki}{Finland}
-{Part-time software development. (40 \%)\n Full-stack development, focus on frontend}
+\cventry
+	{\date[06.2019]}
+	{Gofore Oyj}
+	{\eng{Software developer}
+	\fin{Sovelluskehittäjä}}
+	{Helsinki}
+	{\eng{Finland} \fin{Suomi}}
+	{\eng{Full-stack development}
+	\fin{Full-stack -kehitys}}
 
-\bigbreak
+\cventry
+	{\date[04.2020]}
+	{Corefront Oy}
+	{\eng{Founder, Software developer}
+	\fin{Perustaja, sovelluskehittäjä}}
+	{Helsinki}
+	{\eng{Finland} \fin{Suomi}}
+	{\eng{Small side projects done in an agreement with Gofore.}
+	\fin{Pieniä sivuprojekteja tehtynä suostumuksella Goforen kanssa.}}
 
-\subsection{Other}
+\cventry
+	{\dates[09.2018-12.2018]}
+	{Data In Chains Oy}
+	{\eng{Software developer}
+	\fin{Sovelluskehittäjä}}
+	{Helsinki}
+	{\eng{Finland} \fin{Suomi}}
+	{\eng{Part-time (40 \%)}
+	\fin{Osa-aikainen (40 \%)}}
 
-\cventry{2012 -- 2014}{Palvelu Oy Metsäpolku}{Warehouse worker}{Helsinki}{Finland}{Summer job}
+\cventry
+	{\dates[08.2017-08.2018]}
+	{Streamr Network AG}
+	{\eng{Software developer}
+	\fin{Sovelluskehittäjä}}
+	{Zug}
+	{\eng{Switzerland} \fin{Sveitsi}}
+	{\eng{Full-time frontend development. 
+\n (located 5 months in Helsinki, 7 months in Zug)}
+	\fin{Täysipäiväinen frontend-kehitys 
+\n (5 kk Helsingissä, 7 kk Zugissa)}
+\begin{itemize}
+	\item 
+		\eng{Development eg. with} 
+		\fin{Työkaluina mm.} 
+		JS (ES6), CSS, HTML5, React.js
+	\item 
+		\eng{Project and team management}
+		\fin{Projektin- ja tiiminhallinta}
+	\item 
+		\eng{Representing the company in conferences and meetups}
+		\fin{Yhtiön edustaminen konferensseissa ja meetupeissa}
+\end{itemize}}
 
-\section{Languages}
-\cvitemwithcomment{}{Finnish}{Native}
-\cvitemwithcomment{}{English}{Full professional proficiency}
-\cvitemwithcomment{}{Swedish}{Limited working proficiency}
+\cventry
+	{\dates[09.2014-07.2017]}
+	{Streamr Oy}
+	{\eng{Software developer}
+	\fin{Sovelluskehittäjä}}
+	{Helsinki}
+	{\eng{Finland} \fin{Suomi}}
+	{\eng{Part-time (40 \%)}
+	\fin{Osa-aikainen (40 \%)}}
 
-\section{Skillset}
-\cvitem{}{e.g. Web-development, JavaScript, TypeScript, Node.js, ES6, CSS, HTML, React.js, Redux.js, Express.js, Java, Groovy, Web3}
+\section{
+	\eng{Education}
+	\fin{Koulutus}
+}
 
-% \section{Other}
-% \cventry{2014 -- 2015}{Secretary in the Student’s Union}{Töölön yhteiskoulu}{}{}{}
-% \cventry{2012 -- 2014}{Taking action in the Students’ Union}{Töölön yhteiskoulu}{}{}{}
+\cventry
+	{\date[09.2020]}
+	{\eng{MSc (Technology) in Computer Science} 
+	\fin{Diplomi-insinööri, tietotekniikka}}
+	{}
+	{\eng{Aalto University} 
+	\fin{Aalto-yliopisto}}
+	{}{\eng{Major} \fin{Pääaine}: Security and cloud computing}
+\cventry
+	{\dates[09.2015-12.2019]}
+	{\eng{BSc in Computer Science} 
+	\fin{Luonnontieteiden kandidaatti, tietojenkäsittelytiede}}
+	{}
+	{\eng{University of Helsinki} 
+	\fin{Helsingin yliopisto}}
+	{}{}
+%\cventry
+%	{\dates[08.2012-05.2015]}
+%	{\en{High school graduate} 	
+%	\fin{Ylioppilas}}
+%	{Töölön yhteiskoulu}
+%	{}{}{}
+
+
+\section{
+	\eng{Languages}
+	\fin{Kielitaito}
+}
+
+\cvitemwithcomment{}
+	{\eng{Finnish} \fin{Suomi}}
+	{\languageknowledge{5}}
+\cvitemwithcomment{}
+	{\eng{English} \fin{Englanti}}
+	{\languageknowledge{4}}
+\cvitemwithcomment{}
+	{\eng{Swedish} \fin{Ruotsi}}
+	{\languageknowledge{3}}
+
+\section{
+	\eng{Skillset}
+	\fin{Osaamisen avainsanoja}
+}
+
+\cvitem
+	{}
+	{JavaScript, \eng{Web-development} \fin{Web-kehitys}, TypeScript, Node.js, ES6, CSS, HTML, React.js, Redux.js, Express.js, Java, Web3 etc}
 
 \end{document}
