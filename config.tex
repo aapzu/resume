@@ -1,0 +1,98 @@
+\documentclass[11pt, a4paper, sans]{moderncv}
+\usepackage{fontawesome}
+\usepackage[utf8]{inputenc}
+\usepackage[finnish,english]{babel}
+\usepackage[bottom=2.0cm, top=2.5cm, left=2cm, right=2.5cm]{geometry}
+\usepackage{datetime}
+\usepackage{xcolor}
+
+\moderncvstyle{classic}
+\moderncvcolor{black}
+
+\AtBeginDocument
+	{\recomputelengths}
+\AtBeginDocument
+	{\definecolor
+		{sectionrectanglecolor}
+		{RGB}
+		{2,6,43}}
+\AtBeginDocument
+	{\definecolor
+		{sectiontitlecolor}
+		{RGB}
+		{255,0,0}}
+\AtBeginDocument
+	{\definecolor
+		{nolanguagecolor}
+		{RGB}
+		{204,204,204}}
+
+\makeatletter
+
+\renewcommand
+	{\section}[1]
+	{\vspace*{2.5ex \@plus 1ex \@minus .2ex} 
+		\parbox[m] 
+			{\hintscolumnwidth} 
+			{\raggedleft  
+			\hintfont 
+				{\color 
+					{sectionrectanglecolor} 
+				\rule 
+					{\hintscolumnwidth}
+					{2pt}}}
+	\hspace{\separatorcolumnwidth}%
+	\parbox[m]
+		{\maincolumnwidth}
+		{\sectionstyle{#1}}\\[1ex]}    
+
+\setlength{\hintscolumnwidth}{2.5cm}
+
+\def \date[#1.#2]%
+	{\yearabove
+		{\monthname[#1]}{#2}--\hspace*{28pt}}
+
+\def \dates[#1.#2-#3.#4]%
+	{\yearabove
+		{\monthname[#1]}{#2}--
+			\yearabove
+				{\monthname[#3]}{#4}}
+
+\newcommand{\yearabove}[2]%
+	{\parbox[t]
+		{10mm}
+		{\centering
+			{#2\par\vspace
+				{-2mm} \tiny{#1}}}}
+
+% don't use the icons
+\renewcommand*{\addresssymbol}       {}
+\renewcommand*{\mobilephonesymbol}   {}
+\renewcommand*{\fixedphonesymbol}    {}
+\renewcommand*{\faxphonesymbol}      {}
+\renewcommand*{\emailsymbol}         {}
+\renewcommand*{\homepagesymbol}      {}
+\renewcommand*{\linkedinsocialsymbol}{}
+\renewcommand*{\twittersocialsymbol} {}
+
+\newcommand{\n}{\newline{}}
+
+\newcommand{\eng}[1]{\iflanguage{english}{#1}{}}
+\newcommand{\fin}[1]{\iflanguage{finnish}{#1}{}}
+
+\newcount\languagecount
+\newcommand\languageknowledge[1]
+  {%
+    \hbox
+      {%
+        \languagecount=0
+        \loop\ifnum\languagecount<#1
+          \advance\languagecount1
+          \textcolor{sectionrectanglecolor}{$\bullet$}%
+        \repeat
+        \loop\ifnum\languagecount<5
+          \advance\languagecount1
+          \textcolor{nolanguagecolor}{$\bullet$}%
+        \repeat
+      }%
+  }
