@@ -50,7 +50,7 @@
 
 \def \date[#1.#2]%
 	{\yearabove
-		{\monthname[#1]}{#2}--\hspace*{28pt}}
+		{\monthname[#1]}{#2}--\hspace*{28pt}            } % Don't remove the trailing spaces
 
 \def \dates[#1.#2-#3.#4]%
 	{\yearabove
@@ -76,9 +76,6 @@
 \renewcommand*{\twittersocialsymbol} {}
 
 \newcommand{\n}{\newline{}}
-
-\newcommand{\eng}[1]{\iflanguage{english}{#1}{}}
-\newcommand{\fin}[1]{\iflanguage{finnish}{#1}{}}
 
 \newcount\languagecount
 \newcommand\languageknowledge[1]
