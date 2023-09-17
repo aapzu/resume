@@ -1,6 +1,7 @@
 .DS_Store
 resume.*
 config.*
+*.log
 
 !config.tex
 !resume.tex
