@@ -5,8 +5,8 @@ My Résumé, CV, Curriculum Vitae – However you want to call it
 
 ## Building
 
-The simplest way to build (on Mac), is using `xelatex`:
+```
+latexmk -xelatex [-pvc] resume.tex
+```
 
-```
-xelatex --interaction=batchmode resume.tex 2>&1 > /dev/null
-```
+Use `-pvc` to continuously watch the file and compile after changes.
