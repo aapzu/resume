@@ -1,7 +1,2 @@
 .DS_Store
-resume.*
-config.*
-*.log
-*.fls
-
-!*.tex
+dist
