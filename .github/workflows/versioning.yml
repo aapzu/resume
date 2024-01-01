@@ -3,31 +3,55 @@ on:
   push:
     branches:
       - master
+    paths:
+      - '**.tex'
 concurrency: production
 jobs:
-  Patch:
+  auto-tag-and-build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: '0'
     - name: Minor version for each merge
-      id: taggerDryRun
+      id: tagger
       uses: anothrNick/github-tag-action@1.36.0
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
         WITH_V: true
-        DRY_RUN: true
-
     - name: echo info
       run: |
-        echo "The next tag version will be: ${{ steps.taggerDryRun.outputs.new_tag }}"
-        echo "The current tag is: ${{ steps.taggerDryRun.outputs.tag }}"
-        echo "The version increment was: ${{ steps.taggerDryRun.outputs.part }}"
+        echo "The next tag version will be: ${{ steps.tagger.outputs.new_tag }}"
+        echo "The current tag is: ${{ steps.tagger.outputs.tag }}"
+        echo "The version increment was: ${{ steps.tagger.outputs.part }}"
     # DO MY BUILD HERE
     # IN CASE OF FAILURE, THE STEP BELOW WILL NOT RUN.
-    - name: Minor version for each merge
-      id: taggerFinal
-      uses: anothrNick/github-tag-action@1.36.0
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        tag_name: ${{ steps.tagger.outputs.new_tag }}
+        release_name: Release ${{ steps.tagger.outputs.new_tag }}
+        draft: false
+        prerelease: false
+    - name: Compile LaTeX document
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: resume.tex
+    - name: Upload PDF file as build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: PDF
+        path: resume.pdf
+    - name: Upload PDF file as release artifact 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: resume.pdf
+        asset_name: resume.pdf
+        asset_content_type: application/pdf
+
