@@ -21,8 +21,8 @@ jobs:
 
     - name: echo info
       run: |
-        echo "The next tag version will be: ${{ steps.taggerDryRun.outputs.new_tag }}\
-        The current tag is: ${{ steps.taggerDryRun.outputs.tag }}\
+        echo "The next tag version will be: ${{ steps.taggerDryRun.outputs.new_tag }}\n\
+        The current tag is: ${{ steps.taggerDryRun.outputs.tag }}\n\
         The version increment was: ${{ steps.taggerDryRun.outputs.part }}"
     # DO MY BUILD HERE
     # IN CASE OF FAILURE, THE STEP BELOW WILL NOT RUN.
