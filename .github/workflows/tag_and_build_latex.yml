@@ -1,10 +1,11 @@
-name: T
+name: 'Tag and build LaTeX'
 on:
   push:
     branches:
       - master
     paths:
       - '**.tex'
+  workflow_dispatch:
 concurrency: production
 jobs:
   auto-tag-and-build:
