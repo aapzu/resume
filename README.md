@@ -1,7 +1,9 @@
 # resume
 My Résumé, CV, Curriculum Vitae – However you want to call it
 
-[View it here](https://github.com/aapzu/resume/releases/latest/download/resume.pdf)
+[View](https://docs.google.com/viewer?url=https://github.com/aapzu/resume/releases/latest/download/resume.pdf) / [Download](https://github.com/aapzu/resume/releases/latest/download/resume.pdf)
+
+
 
 ## Building
 
