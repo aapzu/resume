@@ -1,4 +1,7 @@
 # resume
+
+[![Tag and build LaTeX](https://github.com/aapzu/resume/actions/workflows/tag_and_build_latex.yml/badge.svg)](https://github.com/aapzu/resume/actions/workflows/tag_and_build_latex.yml)
+
 My Résumé, CV, Curriculum Vitae – However you want to call it
 
 [View](https://docs.google.com/viewer?url=https://github.com/aapzu/resume/releases/latest/download/resume.pdf) / [Download](https://github.com/aapzu/resume/releases/latest/download/resume.pdf)
