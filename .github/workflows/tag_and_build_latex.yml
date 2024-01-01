@@ -5,6 +5,8 @@ on:
       - master
     paths:
       - '**.tex'
+      - '**.jpg'
+      - '**.png'
   workflow_dispatch:
 concurrency: production
 jobs:
