@@ -8,7 +8,7 @@ My Résumé, CV, Curriculum Vitae – However you want to call it
 ## Building
 
 ```
-latexmk -xelatex [-pvc] resume.tex
+latexmk -xelatex -outdir=dist [-pvc] resume.tex
 ```
 
 Use `-pvc` to continuously watch the file and compile after changes.
